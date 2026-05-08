@@ -18,5 +18,23 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: e9472d6c
+    - name: zmk-module-runtime-input-processor
+      remote: hyhy-masa
+      revision: 8103d061
+    - name: zmk-module-ble-management
+      remote: hyhy-masa
+      revision: 851661cd
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: hyhy-masa
+      revision: efed4f23
+    - name: zmk-module-battery-history
+      remote: hyhy-masa
+      revision: 465e53e9
+    - name: zmk-module-settings-rpc
+      remote: hyhy-masa
+      revision: ad1c995c
+    - name: zmk-module-hold-tap-rpc
+      remote: hyhy-masa
+      revision: 2a352a2
   self:
     path: config
