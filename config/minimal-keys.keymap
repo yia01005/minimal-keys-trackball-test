@@ -67,10 +67,10 @@
 
         layer_1 {
             bindings = <
-&kp LS(N5)               &kp LS(N4)        &kp LS(NUMBER_6)  &kp EQUAL        &kp SLASH                                     &kp F1     &kp F6                    &kp UP_ARROW               &kp RG(S)        &kp RG(R)
-&kp LEFT_BRACE           &kp LS(N3)        &kp LS(ASTRK)     &kp LS(SEMI)     &kp LS(MINUS)      &trans    &kp RS(RCMD)     &kp EQUAL  &kp LEFT_ARROW            &kp DOWN_ARROW             &kp RIGHT_ARROW  &kp F10
-&kp LS(LEFT_BRACE)       &kp LS(EQUAL)     &kp COMMA         &kp PERIOD       &kp LS(SLASH)      &trans    &kp RIGHT_SHIFT  &kp RCMD   &kp RS(RG(LEFT_BRACKET))  &kp RS(LG(RIGHT_BRACKET))  &kp RS(LG(T))    &kp F11
-&kp LS(INTERNATIONAL_1)  &kp LS(NUMBER_1)  &trans            &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &tog 2    &kp RG(A)        &kp RG(X)                                                                        &kp RIGHT_SHIFT
+&kp LS(N5)               &kp LS(N4)        &kp LS(NUMBER_6)  &kp EQUAL        &kp SLASH                            &kp INTERNATIONAL_3      &kp LS(RIGHT_BRACE)  &kp LS(BACKSLASH)  &kp LS(COMMA)  &kp LS(PERIOD)
+&kp LEFT_BRACE           &kp LS(N3)        &kp LS(ASTRK)     &kp LS(SEMI)     &kp LS(MINUS)      &trans    &trans  &kp MINUS                &kp LS(N8)           &kp LS(N9)         &kp SEMICOLON  &kp APOS
+&kp LS(LEFT_BRACE)       &kp LS(EQUAL)     &kp COMMA         &kp PERIOD       &kp LS(SLASH)      &trans    &trans  &kp LS(INTERNATIONAL_3)  &kp RIGHT_BRACE      &kp NON_US_HASH    &kp LS(N7)     &kp LS(NUMBER_2)
+&kp LS(INTERNATIONAL_1)  &kp LS(NUMBER_1)  &trans            &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &tog 2    &trans  &kp RG(LCTRL)                                                                   &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
