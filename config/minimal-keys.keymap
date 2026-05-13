@@ -67,10 +67,10 @@
 
         layer_1 {
             bindings = <
-&kp ESCAPE        &kp LEFT_SHIFT    &mkp MB2           &mkp MB1      &mkp MB3                                       &kp F1     &kp F6                    &kp UP_ARROW               &kp RG(S)        &kp RG(R)
-&kp TAB           &kp HASH          &kp RS(AMPERSAND)  &kp QUESTION  &kp EXCLAMATION  &kp COLON    &kp RS(RCMD)     &kp EQUAL  &kp LEFT_ARROW            &kp DOWN_ARROW             &kp RIGHT_ARROW  &kp F10
-&kp PERCENT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp AT        &kp BACKSLASH    &kp SEMI     &kp RIGHT_SHIFT  &kp RCMD   &kp RS(RG(LEFT_BRACKET))  &kp RS(LG(RIGHT_BRACKET))  &kp RS(LG(T))    &kp F11
-&kp LEFT_COMMAND  &kp LG(F)         &kp LG(X)          &kp LG(Z)     &kp LS(LG(Z))    &kp LG(Y)    &kp RG(A)        &kp RG(X)                                                                        &kp RIGHT_SHIFT
+&kp LS(N5)               &kp LS(N4)        &kp LS(NUMBER_6)  &kp EQUAL        &kp SLASH                                     &kp F1     &kp F6                    &kp UP_ARROW               &kp RG(S)        &kp RG(R)
+&kp LEFT_BRACE           &kp LS(N3)        &kp LS(ASTRK)     &kp LS(SEMI)     &kp LS(MINUS)      &trans    &kp RS(RCMD)     &kp EQUAL  &kp LEFT_ARROW            &kp DOWN_ARROW             &kp RIGHT_ARROW  &kp F10
+&kp LS(LEFT_BRACE)       &kp LS(EQUAL)     &kp COMMA         &kp PERIOD       &kp LS(SLASH)      &trans    &kp RIGHT_SHIFT  &kp RCMD   &kp RS(RG(LEFT_BRACKET))  &kp RS(LG(RIGHT_BRACKET))  &kp RS(LG(T))    &kp F11
+&kp LS(INTERNATIONAL_1)  &kp LS(NUMBER_1)  &trans            &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &tog 2    &kp RG(A)        &kp RG(X)                                                                        &kp RIGHT_SHIFT
             >;
 
             sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
