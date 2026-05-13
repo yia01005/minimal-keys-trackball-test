@@ -62,7 +62,7 @@
 &kp TAB  &kp LEFT_GUI  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &mt LCTRL SPACE  &lt 4 INT_HENKAN    &lt 1 DEL  &lt 2 RET                             &kp ESC
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_1 {
@@ -100,10 +100,10 @@
 
         layer_4 {
             bindings = <
-&bt BT_CLR_ALL  &trans  &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans          &trans  &trans  &trans  &trans  &trans    &trans       &trans        &trans        &trans        &trans        &bt BT_NXT
-&trans          &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_PRV
-&trans          &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                  &bt BT_CLR
+&bt BT_CLR_ALL  &trans  &trans  &trans  &kp LS(LC(M))                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans          &trans  &trans  &trans  &trans         &trans    &trans       &trans        &trans        &trans        &trans        &bt BT_NXT
+&trans          &trans  &trans  &trans  &trans         &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_PRV
+&trans          &trans  &trans  &trans  &trans         &trans    &trans       &trans                                                  &bt BT_CLR
             >;
         };
 
