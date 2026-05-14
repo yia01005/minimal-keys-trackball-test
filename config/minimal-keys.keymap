@@ -105,6 +105,8 @@
 &trans          &trans  &trans  &trans  &trans         &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_PRV
 &trans          &trans  &trans  &trans  &trans         &trans    &trans       &trans                                                  &bt BT_CLR
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_5 {
