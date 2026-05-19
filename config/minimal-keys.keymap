@@ -68,7 +68,7 @@
         layer_1 {
             bindings = <
 &kp LS(N5)               &kp LS(N4)        &kp LS(NUMBER_6)  &kp EQUAL        &kp SLASH                            &kp INTERNATIONAL_3      &kp LS(RIGHT_BRACE)  &kp LS(BACKSLASH)  &kp LS(COMMA)  &kp LS(PERIOD)
-&kp LS(LEFT_BRACE)       &kp LS(N3)        &kp LS(APOS)      &kp LS(SEMI)     &kp LS(MINUS)      &trans    &trans  &kp MINUS                &kp LS(N8)           &kp LS(N9)         &kp SEMICOLON  &kp APOS
+&kp LEFT_BRACE           &kp LS(N3)        &kp LS(APOS)      &kp LS(SEMI)     &kp LS(MINUS)      &trans    &trans  &kp MINUS                &kp LS(N8)           &kp LS(N9)         &kp SEMICOLON  &kp APOS
 &kp LS(LEFT_BRACE)       &kp LS(EQUAL)     &kp COMMA         &kp PERIOD       &kp LS(SLASH)      &trans    &trans  &kp LS(INTERNATIONAL_3)  &kp RIGHT_BRACE      &kp NON_US_HASH    &kp LS(N7)     &kp LS(NUMBER_2)
 &kp LS(INTERNATIONAL_1)  &kp LS(NUMBER_1)  &trans            &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)  &tog 2    &trans  &kp RG(LCTRL)                                                                   &kp DEL
             >;
