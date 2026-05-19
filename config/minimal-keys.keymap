@@ -24,11 +24,11 @@
             label = "TO_LAYER_0";
         };
 
-        new_macro: new_macro {
+        alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
-            label = "NEW_MACRO";
+            bindings = <&macro_press &kp LALT> = <&macro_press &kp TAB>;
+            label = "ALT_TAB";
         };
     };
 
