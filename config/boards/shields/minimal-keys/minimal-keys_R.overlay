@@ -1,6 +1,7 @@
 #include "minimal-keys.dtsi"
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors/runtime-input-processor.dtsi>
+#include <input/processors.dtsi>
 &xiao_serial { status = "disabled"; };
 &default_transform {
     col-offset = <6>;
@@ -47,6 +48,14 @@
         device = <&trackball>;
         input-processors = <&mouse_runtime_input_processor>;
     };
+
+   {
+    trackball_listener :trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        input-processors = <&zip_temp_layer 5 300>;
+    };
+
 };
 
 &spi0 {
