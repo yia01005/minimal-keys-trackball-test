@@ -4,16 +4,19 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: hyhy-masa
       url-base: https://github.com/hyhy-masa
-    - name: caksoylar  # <-- new entry
-      url-base: https://github.com/caksoylar  
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
       remote: hyhy-masa
-      revision: 957c4b0c
+      # Pinned to the Phase 4 cursor-lag fix (mouse delta accumulator, commit B)
+      # built on the diag instruments. Repin to a SHA after Phase 4 validates.
+      revision: aa6ddd443e4618d80518aeeb65022658b1725991
       import: app/west.yml
     - name: pmw3610-driver-minimal
       remote: hyhy-masa
-      revision: "ed93886"
+      # Pinned to the mk2-ble-diag-phase0 tip at the 2026-07-08 farmware release.
+      revision: 67db342ef94faab994158eecfd99b0fc56b99a52
       path: modules/pmw3610-driver-minimal
     - name: zmk-rgbled-widget
       remote: caksoylar
@@ -27,9 +30,6 @@ manifest:
     - name: zmk-behavior-runtime-sensor-rotate
       remote: hyhy-masa
       revision: efed4f23
-    - name: zmk-module-runtime-combos
-      remote: hyhy-masa
-      revision: 119de78
     - name: zmk-module-battery-history
       remote: hyhy-masa
       revision: 465e53e9
@@ -39,5 +39,8 @@ manifest:
     - name: zmk-module-hold-tap-rpc
       remote: hyhy-masa
       revision: 2a352a2
+    - name: zmk-module-runtime-combos
+      remote: hyhy-masa
+      revision: 119de78
   self:
     path: config

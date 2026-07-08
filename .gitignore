@@ -1,0 +1,4 @@
+.DS_Store
+build/
+firmware/
+firmware_download/

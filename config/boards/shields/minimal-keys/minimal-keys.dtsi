@@ -92,6 +92,7 @@
     };
 
     right_encoder: encoder_right {
+        compatible = "alps,ec11";
         status = "disabled";
     };
 

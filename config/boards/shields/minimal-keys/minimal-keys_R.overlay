@@ -2,6 +2,18 @@
 #include <dt-bindings/input/input-event-codes.h>
 #include <input/processors/runtime-input-processor.dtsi>
 &xiao_serial { status = "disabled"; };
+
+&zephyr_udc0 {
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart;
+    };
+};
 &default_transform {
     col-offset = <6>;
 };
