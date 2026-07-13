@@ -1,11 +1,12 @@
-#include <behaviors.dtsi>
 #include <behaviors/runtime-sensor-rotate.dtsi>
+#include <dt-bindings/zmk/data-logger.h>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/data-logger.h>
 
 #undef ZMK_POINTING_DEFAULT_SCRL_VAL
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
 
@@ -33,17 +34,18 @@
 
         // Data logger markers: stamp the ring buffer + send F13/F14 so the
         // host-side event logger can record the press timestamp for sync.
+
         marker_a: marker_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&dlog DLOG_MARKER_A>, <&kp F13>;
+            bindings = <&dlog DLOG_MARKER_A &kp F13>;
             label = "DLOG_MARKER_A";
         };
 
         marker_b: marker_b {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&dlog DLOG_MARKER_B>, <&kp F14>;
+            bindings = <&dlog DLOG_MARKER_B &kp F14>;
             label = "DLOG_MARKER_B";
         };
     };
@@ -89,56 +91,57 @@
 
         default_layer {
             bindings = <
-&kp Q     &kp W         &kp E              &kp R                  &kp T                                  &kp Y            &kp U  &kp I      &kp O    &kp P
-&kp A     &kp S         &kp D              &kp F                  &kp G        &mkp MB1       &kp COLON  &kp H            &kp J  &kp K      &kp L    &kp MINUS
-&kp Z     &kp X         &kp C              &kp V                  &kp B        &mkp MB2       &kp LANG1  &kp N            &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp RCMD  &kp LEFT_ALT  &kp RIGHT_CONTROL  &mt LEFT_COMMAND LANG2  &lt 1 SPACE  &lt 3 ENTER    &lt 1 DEL  &lt_rep 2 BACKSPACE                         &kp RIGHT_SHIFT
+&kp Q    &kp W         &kp E         &kp R                           &kp T                                                  &kp Y        &kp U  &kp I     &kp O     &mo 3
+&kp A    &kp S         &kp D         &kp F                           &kp G        &kp DELETE               &kp BACKSPACE    &kp H        &kp J  &kp K     &kp L     &kp P
+&kp Z    &kp X         &kp C         &kp V                           &kp B        &mkp MB2                 &kp ESCAPE       &kp N        &kp M  &mkp MB1  &mkp MB3  &kp RIGHT_ALT
+&kp TAB  &kp LEFT_GUI  &kp LEFT_ALT  &mt LEFT_SHIFT INTERNATIONAL_5  &lt 1 SPACE  &lt 4 INTERNATIONAL_4    &lt 1 BACKSPACE  &lt 2 ENTER                             &kp ESCAPE
             >;
 
-          sensor-bindings = <&rsr_trans>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_1 {
             bindings = <
-&kp ESCAPE        &kp LEFT_SHIFT    &mkp MB2           &mkp MB1      &mkp MB3                                       &kp F1     &kp F6                    &kp UP_ARROW               &kp RG(S)        &kp RG(R)
-&kp TAB           &kp HASH          &kp RS(AMPERSAND)  &kp QUESTION  &kp EXCLAMATION  &kp COLON    &kp RS(RCMD)     &kp EQUAL  &kp LEFT_ARROW            &kp DOWN_ARROW             &kp RIGHT_ARROW  &kp F10
-&kp PERCENT       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp AT        &kp BACKSLASH    &kp SEMI     &kp RIGHT_SHIFT  &kp RCMD   &kp RS(RG(LEFT_BRACKET))  &kp RS(LG(RIGHT_BRACKET))  &kp RS(LG(T))    &kp F11
-&kp LEFT_COMMAND  &kp LG(F)         &kp LG(X)          &kp LG(Z)     &kp LS(LG(Z))    &kp LG(Y)    &kp RG(A)        &kp RG(X)                                                                        &kp RIGHT_SHIFT
+&kp LS(N5)               &kp LS(N4)      &kp LS(N6)         &kp EQUAL          &kp SLASH                            &kp INT3      &kp LS(RIGHT_BRACE)  &kp LS(BACKSLASH)  &kp LS(COMMA)  &kp LS(PERIOD)
+&kp LEFT_BRACE           &kp LS(N3)      &kp LS(AMPERSAND)  &kp LS(SEMICOLON)  &kp LS(MINUS)      &trans    &trans  &kp MINUS     &kp LS(N8)           &kp LS(N9)         &kp SEMICOLON  &kp SQT
+&kp LS(LEFT_BRACE)       &kp LS(EQUAL)   &kp COMMA          &kp PERIOD         &kp LS(SLASH)      &trans    &trans  &kp LS(INT3)  &kp RIGHT_BRACE      &kp NON_US_HASH    &kp LS(N7)     &kp LS(N2)
+&kp LS(INTERNATIONAL_1)  &kp LG(LS(N1))  &trans             &kp LC(PAGE_UP)    &kp LC(PAGE_DOWN)  &tog 2    &trans  &kp RC(RGUI)                                                         &kp DELETE
             >;
-            sensor-bindings = <&rsr_trans>;
+
+            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
         layer_2 {
             bindings = <
-&kp DEL               &kp PERIOD  &kp NUMBER_7  &kp NUMBER_8   &kp NUMBER_9                                  &kp CARET         &kp AMPERSAND       &kp RS(UP_ARROW)    &kp F4               &kp F5
-&kp BACKSPACE         &kp COMMA   &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6  &kp NUMBER_0    &kp UNDERSCORE  &kp EXCLAMATION   &kp RS(LEFT_ARROW)  &kp RS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)  &kp PERCENT
-&mt LEFT_SHIFT ASTRK  &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3  &kp EQUAL       &kp LG(SPACE)   &kp LEFT_BRACKET  &kp LG(C)           &kp LG(X)           &kp LG(V)            &kp F12
-&kp RG(SPACE)         &kp PLUS    &kp NUMBER_0  &kp RS(RG(V))  &kp RG(C)     &kp RG(V)       &trans          &trans                                                                         &kp PIPE
+&kp DEL  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none                       &kp CARET            &kp HOME            &kp UP_ARROW    &kp END          &kp RIGHT_ALT
+&none    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none  &kp COMMA     &none  &kp PAGE_UP          &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN
+&none    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &kp PERIOD    &none  &kp LA(RIGHT_ARROW)  &kp LA(LEFT_ARROW)  &mkp MB1        &mkp MB3         &mkp MB2
+&trans   &kp NUMBER_0  &none         &none         &none  &tog 2        &none  &none                                                                     &none
             >;
 
-            sensor-bindings =
-                <&rsr_trans>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         layer_3 {
             bindings = <
-&kp ESCAPE      &kp F1                  &kp F3          &kp F4                   &dlog DLOG_FREEZE                                          &kp RA(E)        &kp RG(RA(DOWN_ARROW))    &kp RC(UP_ARROW)           &kp RA(LEFT_ARROW)    &trans
-&kp HOME        &kp F5                  &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END             &dlog DLOG_DUMP    &dlog DLOG_CLEAR        &kp RA(W)        &kp RS(RG(LEFT_BRACKET))  &kp RS(RG(RIGHT_BRACKET))  &kp RG(RS(NUMBER_4))  &bt BT_NXT
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &kp LEFT_COMMAND    &marker_a              &marker_b            &kp RG(W)        &kp RG(LEFT_BRACKET)      &kp RG(RIGHT_BRACKET)      &kp RS(RG(T))         &bt BT_PRV
-&kp RA(SPACE)   &kp INT_HENKAN          &kp LANGUAGE_3  &kp RS(LANGUAGE_8)       &trans            &trans    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP                                                                             &bt BT_CLR
+&kp PRINTSCREEN  &kp F7  &kp F8      &kp F9         &kp F10                                                   &none          &none  &none          &kp LC(LS(V))       &trans
+&kp HOME         &kp F4  &kp F5      &kp F6         &kp F11                 &kp LG(V)                  &none  &none          &none  &none          &kp LA(LEFT_ARROW)  &bt BT_NXT
+&none            &kp F1  &kp F2      &kp F3         &kp F12                 &none                      &none  &none          &none  &kp RG(CARET)  &none               &bt BT_PRV
+&kp RA(SPACE)    &none   &kp LA(F4)  &kp LS(LC(A))  &kp LG(LC(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))    &none  &kp LS(LC(Z))                                            &bt BT_CLR
             >;
 
-            sensor-bindings = <&rsr_trans>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                  &trans
+&bt BT_CLR_ALL  &trans  &trans  &trans  &kp LS(LC(M))                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans          &trans  &trans  &trans  &trans         &trans    &trans  &trans        &trans        &trans        &trans        &bt BT_NXT
+&trans          &trans  &trans  &trans  &trans         &trans    &trans  &trans        &trans        &trans        &trans        &bt BT_PRV
+&bootloader     &trans  &trans  &trans  &trans         &trans    &trans  &trans                                                  &bt BT_CLR
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_5 {
