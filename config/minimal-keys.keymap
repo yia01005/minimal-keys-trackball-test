@@ -126,7 +126,7 @@
             bindings = <
 &kp PRINTSCREEN  &kp F7  &kp F8      &kp F9         &kp F10                                                   &none          &none  &none   &kp LC(LS(V))       &trans
 &kp HOME         &kp F4  &kp F5      &kp F6         &kp F11                 &kp LG(V)                  &none  &none          &none  &none   &kp LA(LEFT_ARROW)  &bt BT_NXT
-&none            &kp F1  &kp F2      &kp F3         &kp F12                 &none                      &none  &none          &none  &trans  &none               &bt BT_PRV
+&none            &kp F1  &kp F2      &kp F3         &kp F12                 &none                      &none  &none          &none  &trans  &trans              &bt BT_PRV
 &kp RA(SPACE)    &none   &kp LA(F4)  &kp LS(LC(A))  &kp LG(LC(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))    &none  &kp LS(LC(Z))                                     &bt BT_CLR
             >;
 
